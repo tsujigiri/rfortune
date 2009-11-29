@@ -14,10 +14,6 @@ To get a random cookie from the jar simply do:
 
   puts cookies.random
 
-== REQUIREMENTS:
-
-To use this gem you need at least one cookie jar file as they are provided by fortune.
-
 == Copyright
 
 Copyright (c) 2009 Helge Rausch. See LICENSE for details.

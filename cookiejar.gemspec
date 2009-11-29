@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'cookiejar'
-  s.version = '0.1.0'
-  s.date = '2009-11-29'
+  s.version = '0.1.1'
+  s.date = '2009-11-30'
   s.authors = ['Helge Rausch']
   s.email = 'helge@rauschenimweltnetz.de'
   s.summary = 'CookieJar provides handling of cookie jar files as known from \'fortune\''
