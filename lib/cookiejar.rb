@@ -1,12 +1,14 @@
-# This program reads cookie jar files e.g. used by fortune to read its
-# fortunes from.
+# This library provides handling of cookie jar files as used by
+# 'fortune' to read its fortunes from.
 #
 # Author::	Helge Rausch (mailto:helge@rauschenimweltnetz.de)
 # Copyright::	Copyright (c) 2009 Helge Rausch
 # License::	Distributes under the same terms as Ruby
 
 # The CookieJar class reads the contents from a cookie jar file and
-# stores its content in an array
+# stores its content in an array. It takes the path of a cookie jar file
+# as an argument and searches for it first locally (relative or
+# absolute), than beneath /usr/share/games/fortunes.
 
 class CookieJar
 
