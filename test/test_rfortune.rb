@@ -1,25 +1,25 @@
 require 'test/unit'
-require 'lib/cookiejar'
+require 'lib/rfortune'
 
 Cookie_jar_file = 'food'
 
-class CookieJarTest < Test::Unit::TestCase
+class RFortuneTest < Test::Unit::TestCase
 
   def test_init
-    assert_not_nil CookieJar.new( Cookie_jar_file ), 'Instantiated a new CookieJar'
+    assert_not_nil RFortune.new( Cookie_jar_file ), 'Instantiated a new RFortune'
   end
 
   def test_random
-    assert_instance_of String, CookieJar.new( Cookie_jar_file ).random, 'Got a random cookie from the jar'
+    assert_instance_of String, RFortune.new( Cookie_jar_file ).random, 'Got a random cookie from the jar'
   end
 
   def test_count
-    assert_instance_of Fixnum, CookieJar.new( Cookie_jar_file ).count
+    assert_instance_of Fixnum, RFortune.new( Cookie_jar_file ).count
   end
 
   def test_add_cookie_and_save
 
-    cookies = CookieJar.new( 'tmp_test_new_cookie_jar' )
+    cookies = RFortune.new( 'tmp_test_new_cookie_jar' )
 
     cookies.add( 'Simsalabimbambasaladusaladim' )
 
@@ -40,9 +40,9 @@ class CookieJarTest < Test::Unit::TestCase
 
   def test_init_without_argument_and_save
 
-    cookies = CookieJar.new
+    cookies = RFortune.new
 
-    assert_not_nil cookies, 'Instantiate CookieJar without specifying a file'
+    assert_not_nil cookies, 'Instantiate RFortune without specifying a file'
 
     assert_raise RuntimeError do
 

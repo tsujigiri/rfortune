@@ -5,18 +5,19 @@
 # Copyright::	Copyright (c) 2009 Helge Rausch
 # License::	Distributes under the same terms as Ruby
 
-# The CookieJar class reads the contents from a cookie jar file and
+# The RFortune class reads the contents from a cookie jar file and
 # stores its content in an array. It takes the path of a cookie jar file
 # as an argument and searches for it first locally (relative or
 # absolute), than beneath /usr/share/games/fortunes.
 
-class CookieJar
+class RFortune
 
   FortunesPath = '/usr/share/games/fortunes/'
 
   # Looks for the specified cookie jar file first localy, than under
   # /usr/share/games/fortunes, opens it and reads its content to the
-  # @cookies array
+  # @cookies array. Without an argument or if the file specified does
+  # not exist it creates a new cookie jar.
   def initialize file_path = nil
 
     @file_path = file_path
@@ -40,6 +41,10 @@ class CookieJar
       elsif File.exist?( FortunesPath + 'off/' + @file_path )
 
 	cookie_jar_file =  File.open( FortunesPath + 'off/' + @file_path, 'r' )
+
+      else
+
+	raise 'No such file: ' + @file_path
 
       end
 
@@ -71,28 +76,28 @@ class CookieJar
   end
 
 
-  # returns the number of cookies in the jar
+  # Returns the number of cookies in the jar
   def count
 
     @cookies.size
 
   end
 
-  # add cookie to cookie jar
+  # Adds a cookie to the jar
   def add cookie
 
     @cookies += [ cookie ] unless cookie.empty?
 
   end
 
-  # returns all cookies in an array
+  # Returns all cookies as an array
   def all
 
     @cookies
 
   end
 
-  # returns all cookies in cookie jar file format
+  # Returns all cookies in cookie jar file format
   def all_formated
 
     all_cookies = @cookies.collect { |c| c = "\n%\n" + c }
@@ -103,8 +108,8 @@ class CookieJar
 
   end
 
-  # saves the content of the jar to the file specified by argument to
-  # given itself or to new
+  # Saves the content of the jar to the file specified by argument given
+  # to itself or to the new method
   def save new_file_path = nil
 
     new_file_path or new_file_path = @file_path or raise 'No file name given'

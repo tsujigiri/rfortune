@@ -1,14 +1,14 @@
-= cookiejar
+= rfortune
 
 A Library for handling cookie jar files as known from 'fortune'.
 
 == SYNOPSIS:
 
-To instantiate a CookieJar you have to give the relative path to a
+To instantiate a RFortune you have to give the relative path to a
 cookie jar file as an argument. If there is no such file relative to the
 current directory it will be searched beneath /usr/share/games/fortunes.
 
-  cookies = CookieJar.new 'cookie_jar_file'
+  cookies = RFortune.new 'cookie_jar_file'
 
 To get a random cookie from the jar simply do:
 
