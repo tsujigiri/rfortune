@@ -2,6 +2,16 @@
 
 A Library for handling cookie jar files as known from 'fortune'.
 
+== INSTALLATION
+
+The latest development version can be found at GitHub:
+
+http://github.com/tsujigiri/rfortune
+
+The latest stable version can be installed from Gemcutter:
+
+gem install rfortune
+
 == SYNOPSIS:
 
 To instantiate a RFortune you have to give the relative path to a
