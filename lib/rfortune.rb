@@ -42,10 +42,6 @@ class RFortune
 
 	cookie_jar_file =  File.open( FortunesPath + 'off/' + @file_path, 'r' )
 
-      else
-
-	raise 'No such file: ' + @file_path
-
       end
 
     end
