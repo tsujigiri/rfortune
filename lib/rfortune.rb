@@ -12,7 +12,7 @@
 
 class RFortune
 
-  FortunesPath = '/usr/share/games/fortunes/'
+  FORTUNES_PATH = '/usr/share/games/fortunes/'
 
   # Looks for the specified cookie jar file first localy, than under
   # /usr/share/games/fortunes, opens it and reads its content to the
@@ -34,13 +34,13 @@ class RFortune
 
 	cookie_jar_file =  File.open( @file_path, mode )
 
-      elsif File.exist?( FortunesPath + @file_path )
+      elsif File.exist?( FORTUNES_PATH + @file_path )
 
-	cookie_jar_file =  File.open( FortunesPath + @file_path, 'r' )
+	cookie_jar_file =  File.open( FORTUNES_PATH + @file_path, 'r' )
 
-      elsif File.exist?( FortunesPath + 'off/' + @file_path )
+      elsif File.exist?( FORTUNES_PATH + 'off/' + @file_path )
 
-	cookie_jar_file =  File.open( FortunesPath + 'off/' + @file_path, 'r' )
+	cookie_jar_file =  File.open( FORTUNES_PATH + 'off/' + @file_path, 'r' )
 
       end
 
@@ -105,7 +105,7 @@ class RFortune
   end
 
   # Saves the content of the jar to the file specified by argument given
-  # to itself or to the new method
+  # to itself or to the initialize method
   def save new_file_path = nil
 
     new_file_path or new_file_path = @file_path or raise 'No file name given'
@@ -115,3 +115,4 @@ class RFortune
   end
 
 end
+
