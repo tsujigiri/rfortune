@@ -12,6 +12,7 @@
 
 class RFortune
 
+  # The path to fortune's fortunes directory
   FORTUNES_PATH = '/usr/share/games/fortunes/'
 
   # Looks for the specified cookie jar file first localy, than under
@@ -52,7 +53,7 @@ class RFortune
 
       cookie_jar_file.close
 
-      # delete empty cookies
+      # Delete empty cookies
       @cookies.delete_if { |cookie| cookie.match( /^[\r\n\s]+$/ ) }
 
     else
