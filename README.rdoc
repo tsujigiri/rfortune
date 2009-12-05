@@ -22,7 +22,7 @@ current directory it will be searched beneath /usr/share/games/fortunes.
 
 To get a random cookie from the jar simply do:
 
-  puts cookies.random
+  cookies.random
 
 == Copyright
 

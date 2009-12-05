@@ -12,6 +12,10 @@
 
 class RFortune
 
+<<<<<<< HEAD:lib/rfortune.rb
+=======
+  # The path to fortune's fortunes directory
+>>>>>>> ceecc6cfcca861070709fcb7cfba6043e1e22cb7:lib/rfortune.rb
   FORTUNES_PATH = '/usr/share/games/fortunes/'
 
   # Looks for the specified cookie jar file first localy, than under
@@ -40,13 +44,14 @@ class RFortune
 
     end
 
+    # If there is a cookie jar file, read it. Otherwise start with an empty one.
     unless  cookie_jar_file.nil?
 
       @cookies = cookie_jar_file.read.split( '%' )
 
       cookie_jar_file.close
 
-      # delete empty cookies
+      # Delete empty cookies
       @cookies.delete_if { |cookie| cookie.match( /^[\r\n\s]+$/ ) }
 
     else
@@ -99,7 +104,7 @@ class RFortune
   end
 
   # Saves the content of the jar to the file specified by argument given
-  # to itself or to the new method
+  # to itself or to the initialize method
   def save new_file_path = nil
 
     # If there is no new_file_path specified take the path specified
@@ -112,3 +117,4 @@ class RFortune
   end
 
 end
+
