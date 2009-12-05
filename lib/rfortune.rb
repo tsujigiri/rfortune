@@ -49,7 +49,7 @@ class RFortune
       cookie_jar_file.close
 
       # Delete empty cookies
-      @cookies.delete_if { |cookie| cookie.match( /^[\r\n\s]+$/ ) }
+      @cookies.delete_if { |cookie| cookie.match( /\A[\r\n\s]*\Z/ ) }
 
     else
 
