@@ -12,10 +12,7 @@
 
 class RFortune
 
-<<<<<<< HEAD:lib/rfortune.rb
-=======
   # The path to fortune's fortunes directory
->>>>>>> ceecc6cfcca861070709fcb7cfba6043e1e22cb7:lib/rfortune.rb
   FORTUNES_PATH = '/usr/share/games/fortunes/'
 
   # Looks for the specified cookie jar file first localy, than under
