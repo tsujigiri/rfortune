@@ -102,8 +102,11 @@ class RFortune
   # to itself or to the new method
   def save new_file_path = nil
 
+    # If there is no new_file_path specified take the path specified
+    # at initialization. If thats also not specified raise an error.
     new_file_path or new_file_path = @file_path or raise 'No file name given'
 
+    # Write all cookies in cookie jar format to the file specified
     File.open( new_file_path, 'w') { |jar| jar.puts all_formated }
 
   end
