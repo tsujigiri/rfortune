@@ -12,7 +12,7 @@
 
 class RFortune
 
-  FortunesPath = '/usr/share/games/fortunes/'
+  FORTUNES_PATH = '/usr/share/games/fortunes/'
 
   # Looks for the specified cookie jar file first localy, than under
   # /usr/share/games/fortunes, opens it and reads its content to the
@@ -26,21 +26,15 @@ class RFortune
 
       if File.exist?( @file_path )
 
-	if File.writable?( @file_path )
-	  mode = 'r+'
-	else
-	  mode = 'r'
-	end
+	cookie_jar_file =  File.open( @file_path, 'r' )
 
-	cookie_jar_file =  File.open( @file_path, mode )
+      elsif File.exist?( FORTUNES_PATH + @file_path )
 
-      elsif File.exist?( FortunesPath + @file_path )
+	cookie_jar_file =  File.open( FORTUNES_PATH + @file_path, 'r' )
 
-	cookie_jar_file =  File.open( FortunesPath + @file_path, 'r' )
+      elsif File.exist?( FORTUNES_PATH + 'off/' + @file_path )
 
-      elsif File.exist?( FortunesPath + 'off/' + @file_path )
-
-	cookie_jar_file =  File.open( FortunesPath + 'off/' + @file_path, 'r' )
+	cookie_jar_file =  File.open( FORTUNES_PATH + 'off/' + @file_path, 'r' )
 
       end
 
