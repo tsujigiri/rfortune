@@ -83,7 +83,7 @@ class RFortune
   end
 
   # Returns all cookies as an array
-  def all
+  def to_a
 
     @cookies
 
