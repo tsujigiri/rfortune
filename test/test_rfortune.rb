@@ -60,7 +60,7 @@ class RFortuneTest < Test::Unit::TestCase
 
   end
 
-  def test_addition
+  def test_summation
 
     first = RFortune.new
     first.add 'fu'
@@ -68,7 +68,7 @@ class RFortuneTest < Test::Unit::TestCase
     second = RFortune.new
     second.add 'bar'
 
-    assert_equal( (first + second).all_formated , "%fu\n%\nbar\n%\n" )
+    assert_equal( "%\nfu\n%\nbar\n%\n", (first + second).formated )
 
   end
 

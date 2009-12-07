@@ -57,6 +57,8 @@ class RFortune
 
     end
 
+    self
+
   end
 
 
@@ -75,30 +77,61 @@ class RFortune
 
   end
 
-  # Adds a cookie to the jar
-  def add cookie
+  # Adds one or more cookies to the jar. Takes a String, Array or RFortune as an argument.
+  def add cookies
+    @cookies += case cookies.class.to_s
+		when 'String' then cookies.split('%')
+		when 'Array' then cookies
+		when 'RFortune' then cookies.to_a
+		else raise TypeError, 'Argument has to be of type String, Array or RFortune, but was of type ' + cookies.class.to_s
+		end
 
-    @cookies += [ cookie ] unless cookie.empty?
+    self
 
   end
 
-  # Returns all cookies as an array
-  def all
+
+  # Summation, takes String, Array or RFortune
+  def + cookies
+
+    RFortune.new.add( @cookies ).add( cookies )
+
+  end
+
+
+  # Returns all cookies in an Array
+  def to_a
 
     @cookies
 
   end
 
-  # Returns all cookies in cookie jar file format
-  def all_formated
 
-    all_cookies = @cookies.collect { |c| c = "\n%\n" + c }
-
-    all_cookies += [ "\n%\n" ]
-
-    all_cookies.to_s.sub( /^\n+/, '' )
+  # Depricated, alias for to_a
+  def all
+    
+    to_a
 
   end
+
+
+  # Returns all cookies in cookie jar file format
+  def formated
+
+    cookies = @cookies.collect { |c| c = "\n%\n" + c }
+
+    cookies += [ "\n%\n" ]
+
+    cookies.to_s.sub( /^\n+/, '' )
+
+  end
+
+
+  # Depricated, alias for formated
+  def all_formated
+    formated
+  end
+
 
   # Saves the content of the jar to the file specified by argument given
   # to itself or to the initialize method

@@ -1,0 +1,10 @@
+== Changelog
+
+=== 0.2.0 (2009-12-07)
+
+* Added summation (+)
+* Added file CHANGELOG.rdoc
+* Method 'all_formated' depricated, use 'formated'
+* Method 'all' deprecated, use 'to_a'
+
+
