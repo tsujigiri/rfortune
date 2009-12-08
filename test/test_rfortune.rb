@@ -72,5 +72,17 @@ class RFortuneTest < Test::Unit::TestCase
 
   end
 
+  def test_each
+
+    cookies = RFortune.new + [ 'foo', 'bar' ]
+
+    cookies.each { |c|
+
+      assert_match /\A(foo|bar)\Z/, c, 'Block for \'each\' method failed'
+
+    }
+
+  end
+
 end
 
