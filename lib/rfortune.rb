@@ -146,5 +146,12 @@ class RFortune
 
   end
 
+  # Calls block once for each cookie, passing that cookie as a parameter. 
+  def each
+
+    @cookies.each { |c| yield c }
+
+  end
+
 end
 
