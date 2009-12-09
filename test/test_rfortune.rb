@@ -78,9 +78,33 @@ class RFortuneTest < Test::Unit::TestCase
 
     cookies.each { |c|
 
-      assert_match /\A(foo|bar)\Z/, c, 'Block for \'each\' method failed'
+      assert_match /\A(foo|bar)\Z/, c, 'Block for \'each\' method'
 
     }
+
+  end
+
+  def test_random_fortune
+
+    # Get regular fortune
+    assert_equal String, RFortune.random_fortune.class, 'Try to get a random fortune from fortune\'s fortunes'
+
+    # Include offensive fortunes
+    assert_equal String, RFortune.random_fortune( false ).class, 'Try to get a random fortune from fortune\'s fortunes'
+
+    # From block
+    i = 0
+
+    RFortune.random_fortune { |fortune|
+     
+      assert_equal String, fortune.class, 'Try to get fortunes using a block.'
+    
+      break if i == 3
+
+      i += 1
+
+    }
+
 
   end
 

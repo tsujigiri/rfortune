@@ -14,15 +14,20 @@ gem install rfortune
 
 == SYNOPSIS:
 
-To instantiate a RFortune you have to give the relative path to a
-cookie jar file as an argument. If there is no such file relative to the
-current directory it will be searched beneath /usr/share/games/fortunes.
+To instantiate RFortune you have to give the relative path to a cookie
+jar file as an argument. If there is no argument given or no such file
+a new one will be created. File paths can be specified relative or
+absolute or as the name of a file from beneath /usr/share/games/forunes.
 
   cookies = RFortune.new 'cookie_jar_file'
 
 To get a random cookie from the jar simply do:
 
   cookies.random
+
+== Links
+
+http://en.wikipedia.org/wiki/Fortune_(Unix)
 
 == Copyright
 

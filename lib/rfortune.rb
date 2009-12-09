@@ -109,7 +109,7 @@ class RFortune
 
   # Depricated, alias for to_a
   def all
-    
+
     to_a
 
   end
@@ -150,6 +150,55 @@ class RFortune
   def each
 
     @cookies.each { |c| yield c }
+
+  end
+
+  # Returns a random fortune from fortune's fortunes. If a block is
+  # given it passes one fortune per iteration to the block. Infinite.
+  # That means FOREVER! So be careful!
+  # Takes 'true' as an argument if you'd like to include offensive
+  # fortunes.
+  def self.random_fortune( no_offense = true )
+
+    cookie_jars = []
+
+    Dir.foreach( FORTUNES_PATH ) { |filename|
+
+      cookie_jars += [ filename ] if filename.match( /\A.*\.u8\Z/ )
+
+    }
+
+    unless no_offense
+
+      Dir.foreach( FORTUNES_PATH + 'off/' ) { |filename|
+
+	cookie_jars += [ 'off/' + filename ] if filename.match( /\.u8\Z/ )
+
+      }
+
+    end
+
+    if block_given?
+
+      fortunes = RFortune.new
+
+      cookie_jars.each { |jar|
+
+	fortunes += RFortune.new( jar )
+
+      }
+
+      begin
+
+	yield fortunes.random
+
+      end while true
+
+    else 
+
+      RFortune.new( FORTUNES_PATH + cookie_jars[ rand( cookie_jars.size ) ] ).random
+
+    end
 
   end
 

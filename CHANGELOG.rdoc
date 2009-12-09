@@ -2,6 +2,7 @@
 
 === dev
 
+* Added class method 'random_fortune'. Usable with or without block.
 * Added 'each' block
 
 === 0.2.0 (2009-12-07)
