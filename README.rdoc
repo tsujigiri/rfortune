@@ -27,7 +27,7 @@ To get a random cookie from the jar simply do:
 
 == Links
 
-http://en.wikipedia.org/wiki/Fortune_(Unix)
+WP: Fortune[http://en.wikipedia.org/wiki/Fortune_(Unix)]
 
 == Copyright
 
