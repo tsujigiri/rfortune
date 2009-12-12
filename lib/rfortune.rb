@@ -156,7 +156,7 @@ class RFortune
   # Returns a random fortune from fortune's fortunes. If a block is
   # given it passes one fortune per iteration to the block. Infinite.
   # That means FOREVER! So be careful!
-  # Takes 'true' as an argument if you'd like to include offensive
+  # Takes 'false' as an argument if you'd like to include offensive
   # fortunes.
   def self.random_fortune( no_offense = true )
 
