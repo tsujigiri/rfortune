@@ -90,7 +90,7 @@ class RFortuneTest < Test::Unit::TestCase
     assert_equal String, RFortune.random_fortune.class, 'Try to get a random fortune from fortune\'s fortunes'
 
     # Include offensive fortunes
-    assert_equal String, RFortune.random_fortune( false ).class, 'Try to get a random fortune from fortune\'s fortunes'
+    assert_equal String, RFortune.random_fortune( :offensive => true ).class, 'Try to get a random fortune from fortune\'s fortunes'
 
     # From block
     i = 0

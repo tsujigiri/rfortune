@@ -1,5 +1,9 @@
 == Changelog
 
+=== dev
+
+* Added options Hash to 'random_fortune' method
+
 === 0.2.1 (2009-12-12)
 
 * Added class method 'random_fortune'. Usable with or without block.

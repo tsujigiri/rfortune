@@ -158,7 +158,9 @@ class RFortune
   # That means FOREVER! So be careful!
   # Takes 'false' as an argument if you'd like to include offensive
   # fortunes.
-  def self.random_fortune( no_offense = true )
+  def self.random_fortune( options = {} )
+
+    options.class != Hash and raise TypeError, 'Can\'t convert ' + options.class.to_s + ' to Hash'
 
     cookie_jars = []
 
@@ -168,7 +170,7 @@ class RFortune
 
     }
 
-    unless no_offense
+    unless options[:offensive]
 
       Dir.foreach( FORTUNES_PATH + 'off/' ) { |filename|
 
