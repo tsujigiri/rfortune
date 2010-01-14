@@ -155,8 +155,9 @@ class RFortune
   # Returns a random fortune from fortune's fortunes. If a block is
   # given it passes one fortune per iteration to the block. Infinite.
   # That means FOREVER! So be careful!
-  # Takes 'false' as an argument if you'd like to include offensive
-  # fortunes.
+  # 
+  # Possible options:
+  #   :offensive	includes offensive fortunes, defaults to false
   def self.random_fortune( options = {} )
 
     options.class != Hash and raise TypeError, 'Can\'t convert ' + options.class.to_s + ' to Hash'
