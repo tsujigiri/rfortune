@@ -125,13 +125,6 @@ class RFortune
 
   end
 
-  # Depricated. I take the fact that nobody told me, the method name is
-  # spelled wrong as permission to drop it in a near future.
-  # Actually I just left it for this message.
-  def formated
-    formatted 
-  end
-
   # Saves the content of the jar to the file specified by argument given
   # to itself or to the initialize method
   def save new_file_path = nil

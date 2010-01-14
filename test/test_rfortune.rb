@@ -68,7 +68,7 @@ class RFortuneTest < Test::Unit::TestCase
     second = RFortune.new
     second.add 'bar'
 
-    assert_equal( "%\nfu\n%\nbar\n%\n", (first + second).formated )
+    assert_equal( "%\nfu\n%\nbar\n%\n", (first + second).formatted )
 
   end
 
