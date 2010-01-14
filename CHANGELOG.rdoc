@@ -1,6 +1,11 @@
 == Changelog
 
-=== dev
+=== 0.2.3 (2010-01-14)
+
+* Corrected spelling in method name 'format[t]ed'
+* Deleted deprecated (and wrong spelled) method 'all_formated'
+
+=== 0.2.2 (2010-01-12)
 
 * Added options Hash to 'random_fortune' method
 

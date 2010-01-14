@@ -114,9 +114,8 @@ class RFortune
 
   end
 
-
   # Returns all cookies in cookie jar file format
-  def formated
+  def formatted
 
     cookies = @cookies.collect { |c| c = "\n%\n" + c }
 
@@ -126,12 +125,12 @@ class RFortune
 
   end
 
-
-  # Depricated, alias for formated
-  def all_formated
-    formated
+  # Depricated. I take the fact that nobody told me, the method name is
+  # spelled wrong as permission to drop it in a near future.
+  # Actually I just left it for this message.
+  def formated
+    formatted 
   end
-
 
   # Saves the content of the jar to the file specified by argument given
   # to itself or to the initialize method
@@ -142,7 +141,7 @@ class RFortune
     new_file_path or new_file_path = @file_path or raise 'No file name given'
 
     # Write all cookies in cookie jar format to the file specified
-    File.open( new_file_path, 'w') { |jar| jar.puts all_formated }
+    File.open( new_file_path, 'w') { |jar| jar.puts formatted }
 
   end
 
