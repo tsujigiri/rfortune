@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'rfortune'
-  s.version = '0.2.3'
-  s.date = '2010-01-14'
+  s.version = '0.3.0'
+  s.date = '2010-02-08'
   s.authors = ['Helge Rausch']
   s.email = 'helge@rauschenimweltnetz.de'
   s.summary = 'RFortune provides handling of cookie jar files as known from \'fortune\''
