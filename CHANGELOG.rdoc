@@ -1,5 +1,9 @@
 == Changelog
 
+=== dev
+
+* enhanced the Array class by a to_rfortune method
+
 === 0.3.0 (2010-02-08)
 
 * Ruby 1.9 compatibility
