@@ -205,6 +205,8 @@ end
 
 class Array
 
+  # Returns a RFortune object if the Array contains at least one
+  # element convertable to String. Otherwise it returns nil.
   def to_rfortune
     
     cookie_jar = RFortune.new
@@ -214,7 +216,7 @@ class Array
       begin
         cookie_jar += element.to_s
       rescue
-	# Nothing to see here, move on, please.
+	# Nothing to see here. Keep moving, please.
       end
 
     }
