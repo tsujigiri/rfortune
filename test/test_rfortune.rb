@@ -108,5 +108,21 @@ class RFortuneTest < Test::Unit::TestCase
 
   end
 
+  def test_converts_array_to_rfortune
+
+    cookie_jar = ['Fu', 'bar', 42, '23' ].to_rfortune
+
+    assert_equal( 4, cookie_jar.count )
+
+    assert_equal( "%\nFu\n%\nbar\n%\n42\n%\n23\n%\n", cookie_jar.formatted )
+
+  end
+
+  def test_should_return_nil_on_conversion_of_an_empty_array
+
+    assert_nil( [].to_rfortune )
+
+  end
+
 end
 

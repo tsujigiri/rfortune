@@ -203,3 +203,25 @@ class RFortune
 
 end
 
+class Array
+
+  def to_rfortune
+    
+    cookie_jar = RFortune.new
+
+    self.each { |element|
+
+      begin
+        cookie_jar += element.to_s
+      rescue
+	# Nothing to see here, move on, please.
+      end
+
+    }
+
+    cookie_jar.count > 0 ? cookie_jar : nil
+
+  end
+
+end
+
