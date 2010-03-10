@@ -1,7 +1,7 @@
 class Array
 
   # Returns a RFortune object if the Array contains at least one
-  # element convertable to String. Otherwise it returns nil.
+  # element convertible to String. Otherwise it returns nil.
   def to_rfortune
     
     cookie_jar = RFortune.new

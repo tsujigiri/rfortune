@@ -7,10 +7,9 @@
 
 require 'array'
 
-# The RFortune class reads the contents from a cookie jar file and
-# stores its content in an array. It takes the path of a cookie jar file
-# as an argument and searches for it first locally (relative or
-# absolute), than beneath /usr/share/games/fortunes.
+# The RFortune class provides handling of Cookie Jar files knwown from
+# 'fortune', a programm distributed with most Unixes, used to get a
+# random proverb, aphorism or alike out of a library of those.
 class RFortune
 
   # The path to fortune's fortunes directory

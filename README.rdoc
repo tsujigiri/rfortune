@@ -10,7 +10,7 @@ http://github.com/tsujigiri/rfortune
 
 The latest stable version can be installed from Gemcutter:
 
-gem install rfortune
+  gem install rfortune
 
 == SYNOPSIS:
 
@@ -21,9 +21,18 @@ absolute or as the name of a file from beneath /usr/share/games/forunes.
 
   cookies = RFortune.new 'cookie_jar_file'
 
-To get a random cookie from the jar simply do:
+To get a random cookie from the specified file:
 
   cookies.random
+
+To get a random cookie from any of the available Cookie Jar files from
+beneath /usr/share/games/fortunes:
+
+  RFortune.random_fortune
+
+To include offensive fortunes:
+
+  RFortune.random_fortune( :offensive => true )
 
 == Links
 
