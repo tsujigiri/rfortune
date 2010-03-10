@@ -5,11 +5,12 @@
 # Copyright::	Copyright (c) 2009 Helge Rausch
 # License::	Distributes under the same terms as Ruby
 
+require 'array'
+
 # The RFortune class reads the contents from a cookie jar file and
 # stores its content in an array. It takes the path of a cookie jar file
 # as an argument and searches for it first locally (relative or
 # absolute), than beneath /usr/share/games/fortunes.
-
 class RFortune
 
   # The path to fortune's fortunes directory
@@ -79,6 +80,7 @@ class RFortune
 
   # Adds one or more cookies to the jar. Takes a String, Array or RFortune as an argument.
   def add cookies
+
     @cookies += case cookies.class.to_s
 		when 'String' then cookies.split('%')
 		when 'Array' then cookies
@@ -107,13 +109,6 @@ class RFortune
   end
 
 
-  # Depricated, alias for to_a
-  def all
-
-    to_a
-
-  end
-
   # Returns all cookies in cookie jar file format
   def formatted
 
@@ -135,7 +130,7 @@ class RFortune
 
     # If there is no new_file_path specified take the path specified
     # at initialization. If thats also not specified raise an error.
-    new_file_path or new_file_path = @file_path or raise 'No file name given'
+    new_file_path ||= @file_path or raise 'No file name given'
 
     # Write all cookies in cookie jar format to the file specified
     File.open( new_file_path, 'w') { |jar| jar.puts formatted }
@@ -198,30 +193,6 @@ class RFortune
       RFortune.new( FORTUNES_PATH + cookie_jars[ rand( cookie_jars.size ) ] ).random
 
     end
-
-  end
-
-end
-
-class Array
-
-  # Returns a RFortune object if the Array contains at least one
-  # element convertable to String. Otherwise it returns nil.
-  def to_rfortune
-    
-    cookie_jar = RFortune.new
-
-    self.each { |element|
-
-      begin
-        cookie_jar += element.to_s
-      rescue
-	# Nothing to see here. Keep moving, please.
-      end
-
-    }
-
-    cookie_jar.count > 0 ? cookie_jar : nil
 
   end
 

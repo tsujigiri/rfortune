@@ -124,5 +124,13 @@ class RFortuneTest < Test::Unit::TestCase
 
   end
 
+  def test_file_name_not_given
+
+    cookie_jar = [ 'fu', 'bar'].to_rfortune
+
+    assert_raise( RuntimeError ) { cookie_jar.save }
+
+  end
+
 end
 
