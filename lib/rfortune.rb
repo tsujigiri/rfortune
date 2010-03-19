@@ -115,11 +115,7 @@ class RFortune
 
     cookies += [ "\n%\n" ]
 
-    cookies_string = ''
-
-    cookies.each { |c| cookies_string += c }
-
-    return cookies_string.sub( /^\n+/, '' )
+    return cookies.join.sub( /^\n+/, '' )
 
   end
 
